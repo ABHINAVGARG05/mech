@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import './WorkshopDetails.css';
 
 const workshopData = {
-  'Orbitron_A_cansat_Workshop': {
+  'orbitron_a_cansat_workshop': {
     title: 'Orbitron-A Cansat Workshop',
     image: 'https://res.cloudinary.com/detarpq3q/image/upload/f_webp/v1752235229/Orbiton_poster_tgzvkv.jpg', 
   
@@ -14,7 +14,7 @@ const workshopData = {
     form: 'https://forms.gle/uKzu33ZKvnNG4g9u5',
     payment: 'https://events.vit.ac.in/events/ASME',
   },
-  'HoverX': {
+  'hoverx': {
     title: 'HoverX',
     image: 'https://res.cloudinary.com/detarpq3q/image/upload/f_webp/v1752235156/Hover_X_post_qpvky7.jpg',
   
