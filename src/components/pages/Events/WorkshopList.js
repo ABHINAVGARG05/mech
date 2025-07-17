@@ -1,32 +1,39 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+// src/components/pages/Events/WorkshopList.js
+import React from "react";
+import { Link } from "react-router-dom";
 import "./WorkshopList.css";
-import './WorkshopDetails.css';
+import "./WorkshopDetails.css";
 
 const workshops = [
   {
-    id: 'Orbitron_A_cansat_Workshop',
-    title: 'Orbitron-A cansat Workshop',
-    image: 'https://res.cloudinary.com/detarpq3q/image/upload/f_webp/v1752235533/orbitron_2_tkca0w.png'
+    id: "orbitron_a_cansat_workshop",
+    title: "Orbitron‑A Cansat Workshop",
+    image:
+      "https://res.cloudinary.com/detarpq3q/image/upload/f_webp/v1752235533/orbitron_2_tkca0w.png",
   },
   {
-    id: 'HoverX',
-    title: 'HoverX',
-    image: 'https://res.cloudinary.com/detarpq3q/image/upload/f_webp/v1752235520/hoverX_3_z7kpyg.png'
+    id: "hoverx",
+    title: "HoverX",
+    image:
+      "https://res.cloudinary.com/detarpq3q/image/upload/f_webp/v1752235520/hoverX_3_z7kpyg.png",
   },
 ];
 
-function WorkshopsList() {
+export default function WorkshopsList() {
   return (
     <div className="workshops-list">
-      <h2>All Workshop</h2>
+      <h2>All Workshops</h2>
       <ul>
-        {workshops.map((workshop) => (
-          <li key={workshop.id}>
-            <Link to={`/Events/Workshops/${workshop.id}`} className="workshop-card-link">
+        {workshops.map((w) => (
+          <li key={w.id}>
+            {/* ✅  updated path: all‑lowercase */}
+            <Link
+              to={`/events/workshops/${w.id}`}
+              className="workshop-card-link"
+            >
               <div className="workshop-card">
-                <img src={workshop.image} alt={workshop.title} />
-                <div className="workshop-title">{workshop.title}</div>
+                <img src={w.image} alt={w.title} />
+                <div className="workshop-title">{w.title}</div>
               </div>
             </Link>
           </li>
@@ -35,5 +42,3 @@ function WorkshopsList() {
     </div>
   );
 }
-
-export default WorkshopsList;

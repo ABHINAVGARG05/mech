@@ -1,41 +1,41 @@
 import React from "react";
-import Navbar from "./components/Navbar";
-//import {HashRouter  as Router,Routes,Route} from 'react-router-dom';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-import Home from "./components/pages/Home";
+
+import Navbar from "./components/Navbar";
 import SpaceThemedPage from "./components/space_bg";
+import Home from "./components/pages/Home";
+import Location from "./components/pages/Location";
+import Contact from "./components/Contact";
+
 import CompetitionsList from "./components/pages/Events/CompetitionsList";
 import CompetitionDetails from "./components/pages/Events/CompetitionDetails";
-import Mascot from "./components/Mascot";
-import "./App.css";
-import Location from "./components/pages/Location";
 import WorkshopList from "./components/pages/Events/WorkshopList";
 import WorkshopDetails from "./components/pages/Events/WorkshopDetails";
 import SpeakerSession from "./components/pages/Events/Speaker";
 import Mechathon from "./components/pages/Events/Mechathon";
-import Contact from "./components/Contact";
 
 function App() {
   return (
     <div className="App">
-      <SpaceThemedPage />
       <Router>
+        <SpaceThemedPage />
         <Navbar />
-
         <Routes>
-          <Route path="/" exact element={<Home />} />
-          <Route path="/Location" exact element={<Location />} />
-          <Route path="/Contact" exact element={<Contact />} />
-          <Route path="/Events/Competitions" element={<CompetitionsList />} />
-          <Route
-            path="/Events/Competitions/:id"
-            element={<CompetitionDetails />}
-          />
-          <Route path="/Events/Workshops" element={<WorkshopList />} />
-          <Route path="/Events/Workshops/:id" element={<WorkshopDetails />} />
-          <Route path="/Events/Speakers" element={<SpeakerSession />} />
-          <Route path="/Events/Mechathon" element={<Mechathon />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/location" element={<Location />} />
+          <Route path="/contact" element={<Contact />} />
+
+          {/* Event Pages */}
+          <Route path="/events/competitions" element={<CompetitionsList />} />
+          <Route path="/events/competitions/:id" element={<CompetitionDetails />} />
+          <Route path="/events/workshops" element={<WorkshopList />} />
+          <Route path="/events/workshops/:id" element={<WorkshopDetails />} />
+          <Route path="/events/speakers" element={<SpeakerSession />} />
+          <Route path="/events/mechathon" element={<Mechathon />} />
+
+          {/* Fallback for unmatched routes */}
+          <Route path="*" element={<h1>404 - Page Not Found</h1>} />
         </Routes>
       </Router>
     </div>
